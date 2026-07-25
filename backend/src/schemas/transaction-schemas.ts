@@ -1,4 +1,4 @@
-import { z } from '@hono/zod-openapi'
+import { z } from 'zod'
 import { resolver } from 'hono-openapi'
 
 export const TransactionType = z.enum(['income', 'expense'])

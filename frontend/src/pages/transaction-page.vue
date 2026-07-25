@@ -31,8 +31,8 @@ const form = ref<CreateTransactionBody & { id?: string }>({
 })
 
 const selectedType = ref<'income' | 'expense'>('expense')
-const categoryOptions = computed(() =>
-  selectedType.value === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES
+const categoryOptions = computed<string[]>(() =>
+  selectedType.value === 'income' ? [...INCOME_CATEGORIES] : [...EXPENSE_CATEGORIES]
 )
 
 function openCreate() {

@@ -1,7 +1,6 @@
 import type { D1Database } from '@cloudflare/workers-types'
 import type { CreateTransactionInput, Transaction, UpdateTransactionInput } from '../../domain/entities/transaction'
 import type { TransactionRepository } from '../../domain/repositories/transaction-repository'
-import { v4 } from 'uuid'
 
 export class D1TransactionRepository implements TransactionRepository {
   constructor(private readonly db: D1Database) {}
@@ -23,7 +22,7 @@ export class D1TransactionRepository implements TransactionRepository {
   }
 
   async create(input: CreateTransactionInput): Promise<Transaction> {
-    const id = v4()
+    const id = crypto.randomUUID()
     const now = new Date().toISOString()
     await this.db
       .prepare(

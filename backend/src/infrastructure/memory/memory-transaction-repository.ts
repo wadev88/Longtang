@@ -1,6 +1,6 @@
 import type { CreateTransactionInput, Transaction, UpdateTransactionInput } from '../../domain/entities/transaction'
 import type { TransactionRepository } from '../../domain/repositories/transaction-repository'
-import { v4 } from 'uuid'
+
 
 export class MemoryTransactionRepository implements TransactionRepository {
   private transactions: Map<string, Transaction> = new Map()
@@ -18,7 +18,7 @@ export class MemoryTransactionRepository implements TransactionRepository {
   async create(input: CreateTransactionInput): Promise<Transaction> {
     const now = new Date().toISOString()
     const transaction: Transaction = {
-      id: v4(),
+      id: crypto.randomUUID(),
       userId: input.userId,
       type: input.type,
       category: input.category,
