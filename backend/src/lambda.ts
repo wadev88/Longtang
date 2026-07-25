@@ -6,10 +6,12 @@ import { createApp } from './app'
 import { createContainer } from './di/container'
 import { MemoryCacheRepository } from './infrastructure/memory/memory-cache-repository'
 import { MemoryUserRepository } from './infrastructure/memory/memory-user-repository'
+import { MemoryTransactionRepository } from './infrastructure/memory/memory-transaction-repository'
 
 const container = createContainer({
   userRepository: new MemoryUserRepository(),
   cacheRepository: new MemoryCacheRepository(),
+  transactionRepository: new MemoryTransactionRepository(),
 })
 
 const app = createApp(() => container)

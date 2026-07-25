@@ -8,6 +8,14 @@ export default [
     icon: { icon: 'ri-home-line' },
   },
   {
+    heading: 'การเงิน',
+  },
+  {
+    title: 'รายรับ-รายจ่าย',
+    to: { name: 'transaction-page' },
+    icon: { icon: 'ri-money-dollar-circle-line' },
+  },
+  {
     heading: 'Admin',
   },
   {
