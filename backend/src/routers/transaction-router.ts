@@ -5,7 +5,7 @@ import {
   errorResponseSchema,
   transactionIdParamSchema,
   transactionListResponseSchema,
-  transactionSingleResponseSchema,
+  transactionResponseSchema,
   updateTransactionSchema,
   transactionDeleteResponseSchema,
 } from '../schemas/transaction-schemas'
@@ -36,7 +36,7 @@ export function createTransactionRouter() {
       tags: ['Transactions'],
       summary: 'Create a transaction',
       responses: {
-        201: { description: 'Transaction created', content: jsonContent(transactionSingleResponseSchema) },
+        201: { description: 'Transaction created', content: jsonContent(transactionResponseSchema) },
         400: { description: 'Invalid input', content: jsonContent(errorResponseSchema) },
       },
     }),
@@ -50,7 +50,7 @@ export function createTransactionRouter() {
       tags: ['Transactions'],
       summary: 'Get a transaction by id',
       responses: {
-        200: { description: 'Transaction found', content: jsonContent(transactionSingleResponseSchema) },
+        200: { description: 'Transaction found', content: jsonContent(transactionResponseSchema) },
         404: { description: 'Transaction not found', content: jsonContent(errorResponseSchema) },
       },
     }),
@@ -64,7 +64,7 @@ export function createTransactionRouter() {
       tags: ['Transactions'],
       summary: 'Update a transaction',
       responses: {
-        200: { description: 'Transaction updated', content: jsonContent(transactionSingleResponseSchema) },
+        200: { description: 'Transaction updated', content: jsonContent(transactionResponseSchema) },
         400: { description: 'Invalid input', content: jsonContent(errorResponseSchema) },
         404: { description: 'Transaction not found', content: jsonContent(errorResponseSchema) },
       },
