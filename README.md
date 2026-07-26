@@ -1,4 +1,4 @@
-# NgernNgern ThongThong — Full-Stack
+# Longtang— Full-Stack
 
 Template สำหรับนักศึกษาที่อยากเรียนรู้การพัฒนา Full-Stack Web Application ตั้งแต่ต้น
 ใช้เป็นฐานในการต่อยอดโปรเจกต์ได้เลย มี Users Management เป็นตัวอย่าง Resource พร้อม Clean Architecture ครบชุด
